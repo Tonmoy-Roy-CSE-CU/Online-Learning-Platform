@@ -152,7 +152,26 @@ var smtpTransport = nodemailer.createTransport({
   
 var rand,mailOptions,host,link;
 
+// Route to delete test based on `testid`
+app.post('/deleteTest', (req, res) => {
+    const { testid } = req.body;
 
+    // SQL query to delete test from `test` table
+    const sql = 'DELETE FROM test WHERE testid = ?';
+    
+    mysqlConnection.query(sql, [testid], (err, result) => {
+        if (err) {
+            console.error('Error deleting test:', err);
+            return res.status(500).json({ success: false, message: 'Failed to delete test' });
+        }
+        
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ success: false, message: 'Test not found' });
+        }
+
+        res.json({ success: true, message: 'Test deleted successfully' });
+    });
+});
 app.post('/send',function(req,res){
     rand=Math.floor((Math.random() * 100) + 54);
     host=req.get('host');

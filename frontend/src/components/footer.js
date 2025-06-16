@@ -9,9 +9,9 @@ class Footer extends Component{
                 <div className="row" style={{marginTop:"20px"}}>
                     {/* <!-- Start: Company Tagline --> */}
                     <div className="col-md-6 item text" style={{marginBottom:"0px"}}>
-                        <h3>Antariksh</h3>
-                        <p>“The day satellite stops functioning forever; so many works will get missing forever!”<br/>We make sure that it never happens.</p>
-                    </div>
+                        <h3>OLP</h3>
+                                <p>Building innovative solutions that make a difference.</p>
+                            </div>
                     {/* <!-- End: Company Tagline --> */}
                     {/* <!-- Start: About --> */}
                     <div className="col-sm-6 col-md-3 item">
@@ -46,7 +46,7 @@ class Footer extends Component{
                 <div style={{textAlign:"center",margintop:"-40px"}}></div>
                 {/* <!-- End: Divider --> */}
                 {/* <!-- Start: Copyright --> */}
-                <p className="copyright" style={{marginTop: "37px"}}>LazieDev © 2018</p>
+                <p className="copyright" style={{marginTop: "37px"}}>OLP team © 2025</p>
                 {/* <!-- End: Copyright --> */}
             </div>
         </footer>

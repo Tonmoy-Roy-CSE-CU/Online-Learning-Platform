@@ -219,6 +219,7 @@ if(JSON.parse(localStorage.getItem("jwt")))
       } )
 
   }
+  
   render(){
     let typeofteacher,typeofstudent;
     if(localStorage.getItem('jwt')!=null)
@@ -283,7 +284,18 @@ if(JSON.parse(localStorage.getItem("jwt")))
         <Route path="/tsetting"  render={props=>typeofteacher?<Tsetting/>:<Redirect to="Logint"/> } /> 
         <Route path="/teacherDashboard" render={props=>typeofteacher? <Tdashboard setHist={this.sethistory} tot={this.state.prevTot}/> :<Redirect to="Logint"/> }/>
         <Route path='/viewteachtest'  render={props=>typeofteacher?<ViewTeachTest prevTest={this.state.viewTestArr} tidis={this.state.viewtid} />:<Redirect to="Logint"/> } ></Route>
-        <Route path="/testhistory" render={props=>typeofteacher?<Testhistory prevTest={this.state.history} showT={this.showTest} />:<Redirect to="Logint"/> } />
+        <Route 
+  path="/testhistory" 
+  render={props => 
+    typeofteacher 
+      ? <Testhistory 
+          prevTest={this.state.history} 
+          showT={this.showTest} 
+          deleteTest={this.handleDeleteTest} 
+        /> 
+      : <Redirect to="Logint" />
+  } 
+/>
         <Route path="/calender" render={props=>typeofteacher?<Calender/>:<Redirect to="Logint"/> } /> 
         
         <Route path="/testloginregister" render={props=>typeofstudent?<Testloginregister/>:<Redirect to="Logins"/> }/> 

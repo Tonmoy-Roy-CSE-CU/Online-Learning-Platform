@@ -12,9 +12,9 @@ class Home extends Component
             <div className="row" style={{margin:0,padding:0}}>
             <div className="col-md-6 col-12" style={{margin:0,padding:0}}>
             <br/>
-            <h4 id="mtitle">Let's Learn</h4><br/><br/>
+            {/*<h4 id="mtitle">O.L.P.</h4><br/><br/>*/}
             <h2 id="head1">A PLATFORM</h2>
-            <h2 id="head1">FOR ONLINE EXAMS!!!</h2>
+            <h2 id="head1">FOR ONLINE LEARNING!!!</h2>
             <div className="row">
             <div className="col-12 col-md-6">
             <br/>

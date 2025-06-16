@@ -1,27 +1,48 @@
-var con= require('./../dbconnection');
+var con = require('./../dbconnection');
 
-module.exports.getmocktest = async function(req,res){
-       con.query("SELECT *  FROM mtest", function(err , data){
+// Fixed getmocktest endpoint
+module.exports.getmocktest = function(req, res) {
+    con.query("SELECT * FROM mocktest", function(err, data) { // Changed table name to mocktest
         if (err) {
-          return res.status(400).json({code:0});
-        } else {
-          return res.status(400).json({code:data});
-          } 
-      });
+            console.error("Database error:", err);
+            return res.status(500).json({ 
+                code: [],
+                error: "Database query failed"
+            });
+        }
+        
+        // Ensure we always return an array
+        const result = Array.isArray(data) ? data : [];
+        return res.status(200).json({ 
+            code: result 
+        });
+    });
+};
+
+// Fixed gettest endpoint
+module.exports.gettest = function(req, res) {
+    const testid = req.body.testid;
+    
+    if (!testid) {
+        return res.status(400).json({
+            code: [],
+            error: "Missing testid parameter"
+        });
     }
 
-    module.exports.gettest = async function(req,res){
-        var users={
-             "testid":req.body.testid,
-           }
-           con.query("SELECT *  FROM mocktest WHERE testid = ? " , users.testid , function(err , data){
-            if (err) {
-              return res.status(400).json({code:0});
-            } else {
-              return res.status(400).json({code:data});
-              } 
-          });
+    con.query("SELECT * FROM mocktest WHERE testid = ?", [testid], function(err, data) {
+        if (err) {
+            console.error("Database error:", err);
+            return res.status(500).json({
+                code: [],
+                error: "Database query failed"
+            });
         }
-
-    
         
+        // Always return an array even for single results
+        const result = Array.isArray(data) ? data : [];
+        return res.status(200).json({
+            code: result
+        });
+    });
+};
