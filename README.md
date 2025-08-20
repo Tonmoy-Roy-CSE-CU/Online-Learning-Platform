@@ -122,4 +122,5 @@ Open in browser:
 | Admin   | [admin@example.com](mailto:admin@example.com)     | 123456   |
 | Teacher | [teacher@example.com](mailto:teacher@example.com) | 123456   |
 | Student | [student@example.com](mailto:student@example.com) | 123456   |
+
 (If these are not in the DB yet, they can register.)
