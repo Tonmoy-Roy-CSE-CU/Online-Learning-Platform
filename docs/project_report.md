@@ -173,15 +173,23 @@ Visit: 👉 [http://localhost:3000](http://localhost:3000)
 ## 11. Key Interface Screenshots
 [Place screenshots here]
 
-Login/Register Interface Login Page
+Login/Register Page
+![Login Page](Images/Sign%20in%20Register.png)
 
-Dashboard
+Admin Dashboard
+![Admin Dashboard](Images/admin_dashboard.png)
 
-Note Creation Create Note
+Teacher Dashboard
+![Teacher Dashboard](Images/teacher_dashboard.png)
 
-Note Management Notes List
+Student Dashboard
+![Student Dashboard](Images/student_dashboard.png)
 
-Profile Page Profile.
+Student Take Test
+![Student Take Test](Images/student_take-test.png)
+
+Student See Results
+![Student See Results](Images/student_see-results.png)
 
 ## 12. Conclusion
 
