@@ -171,7 +171,6 @@ Visit: 👉 [http://localhost:3000](http://localhost:3000)
 
 
 ## 11. Key Interface Screenshots
-[Place screenshots here]
 
 Login/Register Page
 ![Login Page](Images/Sign%20in%20Register.png)
@@ -187,6 +186,8 @@ Student Dashboard
 
 Student Take Test
 ![Student Take Test](Images/student_take-test.png)
+![Student Started Test](Images/student_started-test.png)
+![Student See Test Result](Images/student_see-test-result.png)
 
 Student See Results
 ![Student See Results](Images/student_see-results.png)
